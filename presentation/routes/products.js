@@ -1,6 +1,6 @@
-const Router = require("../router");
+const Router = require("../../infrastructure/router");
 
-const DynamodbAdapter = require('../db/dynamodb/dynamodb-adapter');
+const DynamodbAdapter = require('../../infrastructure/db/dynamodb/dynamodb-adapter');
 const dynamodbAdpter = new DynamodbAdapter();
 
 const ProductService = require("../../services/product-service");
