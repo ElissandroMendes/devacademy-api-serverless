@@ -1,7 +1,10 @@
 const { DynamoDbSchema, DynamoDbTable } = require("@aws/dynamodb-data-mapper");
 
-class Product {
-  constructor(opts) {
+const { Product } = require("../../../domain/models");
+
+class DynamodbProduct extends Product {
+  constructor(opts = {}) {
+    super(opts);
     if (opts) {
       Object.keys(opts).forEach((key) => {
         this[key] = opts[key];
@@ -10,7 +13,7 @@ class Product {
   }
 }
 
-Object.defineProperties(Product.prototype, {
+Object.defineProperties(DynamodbProduct.prototype, {
   [DynamoDbTable]: {
     value: process.env.PRODUCTS_TABLE || "products",
   },
@@ -26,4 +29,4 @@ Object.defineProperties(Product.prototype, {
   },
 });
 
-module.exports = Product;
+module.exports = DynamodbProduct

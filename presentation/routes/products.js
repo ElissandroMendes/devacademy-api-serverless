@@ -1,6 +1,10 @@
-const Router = require("./../lib/router");
-const ProductService = require("../services/product-service");
-const productService = new ProductService();
+const Router = require("../router");
+
+const DynamodbAdapter = require('../db/dynamodb/dynamodb-adapter');
+const dynamodbAdpter = new DynamodbAdapter();
+
+const ProductService = require("../../services/product-service");
+const productService = new ProductService(dynamodbAdpter);
 
 const router = new Router({ prefix: "products" });
 

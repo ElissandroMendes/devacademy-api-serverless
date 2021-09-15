@@ -1,5 +1,5 @@
-const App = require("./lib/app");
-const productsRouter = require("./routes/products");
+const App = require("./presentation/app");
+const productsRouter = require("./presentation/routes/products");
 
 module.exports.handler = async (event) => {
   const app = new App(event);

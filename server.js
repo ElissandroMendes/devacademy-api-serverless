@@ -72,5 +72,5 @@ const server = http.createServer(async (req, res) => {
 });
 
 server.listen(PORT, () => {
-  console.log(`O endpoit de testes foi iniciado na porta ${PORT} | http://localhost:${PORT}`);
+  console.log(`O endpoint de testes foi iniciado na porta ${PORT} | http://localhost:${PORT}`);
 });
